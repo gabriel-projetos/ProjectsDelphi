@@ -1,0 +1,167 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+type
+  TProprietario = class
+  private
+    FComplemente: string;
+    FRG: string;
+    FBairro: string;
+    FDataNascimento: string;
+    FCPF: string;
+    FCep: string;
+    FNome: string;
+    FCidade: string;
+    FEstado: string;
+    FRua: string;
+    FIdade: integer;
+
+
+  public
+
+    property Idade: integer read FIdade write FIdade;
+
+    procedure SetIdade(const Value: integer);
+    procedure SetBairro(const Value: string);
+    procedure SetCep(const Value: string);
+    procedure SetCidade(const Value: string);
+    procedure SetComplemente(const Value: string);
+    procedure SetCPF(const Value: string);
+    procedure SetDataNascimento(const Value: string);
+    procedure SetEstado(const Value: string);
+    procedure SetNome(const Value: string);
+    procedure SetRG(const Value: string);
+    procedure SetRua(const Value: string);
+
+    property  Nome: string read FNome write SetNome;
+    property  CPF: string read FCPF write SetCPF;
+    property  RG: string read FRG write SetRG;
+    property  DataNascimento: string read FDataNascimento write SetDataNascimento;
+    property  Rua : string read FRua write SetRua;
+    property  Bairro: string read FBairro write SetBairro;
+    property  Cidade: string read FCidade write SetCidade;
+    property  Estado: string read FEstado write SetEstado;
+    property  Cep: string read FCep write SetCep;
+    property  Complemento: string read FComplemente write SetComplemente;
+
+    Constructor Create;
+    Destructor Destroy; Override;
+
+    function saberIdade(qntsAnos: integer): integer;
+
+  end;
+
+var
+  Form1: TForm1;
+  Proprietario: TProprietario;
+
+implementation
+
+{$R *.dfm}
+
+{ TProprietario }
+
+constructor TProprietario.Create;
+begin
+
+end;
+
+destructor TProprietario.Destroy;
+begin
+
+  inherited;
+end;
+
+
+function TProprietario.saberIdade(qntsAnos: integer): integer;
+begin
+  result := FIdade + qntsAnos;
+end;
+
+procedure TProprietario.SetBairro(const Value: string);
+begin
+  FBairro := Value;
+end;
+
+procedure TProprietario.SetCep(const Value: string);
+begin
+  FCep := Value;
+end;
+
+procedure TProprietario.SetCidade(const Value: string);
+begin
+  FCidade := Value;
+end;
+
+procedure TProprietario.SetComplemente(const Value: string);
+begin
+  FComplemente := Value;
+end;
+
+procedure TProprietario.SetCPF(const Value: string);
+begin
+  FCPF := Value;
+end;
+
+procedure TProprietario.SetDataNascimento(const Value: string);
+begin
+  FDataNascimento := Value;
+end;
+
+procedure TProprietario.SetEstado(const Value: string);
+begin
+  FEstado := Value;
+end;
+
+procedure TProprietario.SetIdade(const Value: integer);
+begin
+  FIdade := Value;
+end;
+
+procedure TProprietario.SetNome(const Value: string);
+begin
+  FNome := Value;
+end;
+
+procedure TProprietario.SetRG(const Value: string);
+begin
+  FRG := Value;
+end;
+
+procedure TProprietario.SetRua(const Value: string);
+begin
+  FRua := Value;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  idadenova: integer;
+begin
+ try
+  Proprietario:= TProprietario.Create;
+  Proprietario.SetIdade := StrToiNT((Edit1.Text));
+  idadenova := Proprietario.saberIdade(20);
+  ShowMessage('Sua idade é: ' + IntToSTR(Proprietario.Idade) + 'Daqui 20 anos será: ' +
+   IntToStr(idadenova));
+ finally
+   FreeAndNil(Proprietario);
+ end;
+end;
+
+end.

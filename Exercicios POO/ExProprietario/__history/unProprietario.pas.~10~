@@ -1,0 +1,164 @@
+unit unProprietario;
+
+interface
+
+uses
+  System.SysUtils, unEndereco;
+
+type
+  TProprietario = class
+  private
+    FNome: string;
+    FCPF: String;
+    FRG: String;
+    FDataNascimento: String;
+    FEndereco: TEndecero;
+    FRua: string;
+    FBairro: string;
+    FCidade: string;
+    FEstado: string;
+    FCEP: String;
+    FComplemente: string;
+   public
+    function GetCPF: String;
+    function GetNome: string;
+    function GetDataNascimento: string;
+    function GetRG: String;
+    function GetBairro: String;
+    function GetCep: String;
+    function GetCidade: string;
+    function GetComplemento: string;
+    function GetEstado: string;
+    function GetRua: string;
+
+    procedure SetCPF(const Value: String);
+    procedure SetNome(const Value: string);
+    procedure SetDataNascimento(const Value: string);
+    procedure SetRG(const Value: String);
+    procedure SetBairro(const Value: String);
+    procedure SetCep(const Value: String);
+    procedure SetCidade(const Value: string);
+    procedure SetComplemento(const Value: string);
+    procedure SetEstado(const Value: string);
+    procedure SetRua(const Value: string);
+
+    property Nome: string read GetNome write SetNome;
+    property CPF: String read GetCPF write SetCPF;
+    property RG: String read GetRG write SetRG;
+    property DataNascimento: string read GetDataNascimento write SetDataNascimento;
+    property Rua: string read GetRua write SetRua;
+    property Bairro: String read GetBairro write SetBairro;
+    property Cidade: string read GetCidade write SetCidade;
+    property Estado: string read GetEstado write SetEstado;
+    property Cep: String read GetCep write SetCep;
+    property Complemento: string read GetComplemento write SetComplemento;
+  end;
+
+implementation
+
+{ TProprietario }
+
+function TProprietario.GetBairro: String;
+begin
+  result := FBairro;
+end;
+
+function TProprietario.GetCep: String;
+begin
+  result := FCEP;
+end;
+
+function TProprietario.GetCidade: string;
+begin
+  result := FCidade;
+end;
+
+function TProprietario.GetComplemento: string;
+begin
+  result := FComplemente;
+end;
+
+function TProprietario.GetCPF: String;
+begin
+  result := FCPF;
+end;
+
+function TProprietario.GetDataNascimento: string;
+begin
+  result := FDataNascimento;
+end;
+
+function TProprietario.GetEstado: string;
+begin
+  RESULT := FEstado;
+end;
+
+function TProprietario.GetNome: string;
+begin
+  result := FNome;
+end;
+
+function TProprietario.GetRG: String;
+begin
+  result := FRG;
+end;
+
+function TProprietario.GetRua: string;
+begin
+  result := FRua;
+end;
+
+procedure TProprietario.SetBairro(const Value: String);
+begin
+  FBairro := Value;
+end;
+
+procedure TProprietario.SetCep(const Value: String);
+begin
+  FCEP := Value;
+end;
+
+procedure TProprietario.SetCidade(const Value: string);
+begin
+  FCidade := Value;
+end;
+
+procedure TProprietario.SetComplemento(const Value: string);
+begin
+  FComplemente := Value;
+end;
+
+procedure TProprietario.SetCPF(const Value: String);
+begin
+ FCPF := Value;
+end;
+
+procedure TProprietario.SetDataNascimento(const Value: string);
+begin
+  FDataNascimento := Value;
+end;
+
+procedure TProprietario.SetEstado(const Value: string);
+begin
+  FEstado := Value;
+end;
+
+procedure TProprietario.SetNome(const Value: string);
+begin
+    if Trim(Value) = '' then
+      Raise exception.Create('O nome não pode ser nulo.')
+    else
+      FNome := Value;
+end;
+
+procedure TProprietario.SetRG(const Value: String);
+begin
+  FRG := Value;
+end;
+
+procedure TProprietario.SetRua(const Value: string);
+begin
+  FRua := Value;
+end;
+
+end.

@@ -1,0 +1,40 @@
+unit unEndereco;
+
+interface
+
+type
+  TEndecero = class
+  private
+    FRua: string;
+    FBairro: string;
+    FCidade: string;
+    FEstado: string;
+    FCEP: String;
+    FComplemente: string;
+
+  public
+    function GetBairro: String;
+    function GetCep: String;
+    function GetCidade: string;
+    function GetComplemento: string;
+    function GetEstado: string;
+    function GetRua: string;
+
+    procedure SetBairro(const Value: String);
+    procedure SetCep(const Value: String);
+    procedure SetCidade(const Value: string);
+    procedure SetComplemento(const Value: string);
+    procedure SetEstado(const Value: string);
+    procedure SetRua(const Value: string);
+
+    property Rua: string read GetRua write SetRua;
+    property Bairro: String read GetBairro write SetBairro;
+    property Cidade: string read GetCidade write SetCidade;
+    property Estado: string read GetEstado write SetEstado;
+    property Cep: String read GetCep write SetCep;
+    property Complemento: string read GetComplemento write SetComplemento;
+  end;
+
+implementation
+
+end.

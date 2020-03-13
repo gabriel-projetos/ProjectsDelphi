@@ -1,0 +1,180 @@
+unit unCarro;
+
+interface
+type
+  TCarro = class
+    private
+      FModelo: string;
+      FCor: string;
+      FAno : string;
+      FMarca: string;
+      FChassi: STRING;
+      FProprietario : string;
+      FVelocidadeMax: double;
+      FVelocidadeAtual: double;
+      FNrPortas: integer;
+      FTemTetoSolar: boolean;
+      FNrMarchas: integer;
+      FTemCambioAutomatico: boolean;
+      FVolumeCombustivel: double;
+    public
+    function GetAno: String;
+    function GetChassi: string;
+    function GetCor: string;
+    function GetMarca: string;
+    function GetModelo: string;
+    function GetNumeroPortas: integer;
+    function GetProprietario: string;
+    function GetTemTetoSolar: boolean;
+    function GetVelAtual: Double;
+    function GetVelMax: Double;
+    function GetVolumeCombustivel: double;
+
+    procedure Acelera(var Value: double);
+    procedure SetAno(const Value: string);
+    procedure SetChassi(const Value: string);
+    procedure SetCor(const Value: string);
+    procedure SetMarca(const Value: string);
+    procedure SetModelo(const Value: string);
+    procedure SetNumeroPortas(const Value: integer);
+    procedure SetProprietario(const Value: string);
+    procedure SetTemTetoSolar(const Value: boolean);
+    procedure SetVelAtual(const Value: Double);
+    procedure SetVelMax(const Value: Double);
+    procedure SetVolumeCombustivel(const Value: double);
+
+      property Modelo: string read GetModelo write SetModelo;
+      property Cor: string read GetCor write SetCor;
+      property Ano: String read GetAno write SetAno;
+      property Marca: string read GetMarca write SetMarca;
+      property Chassi: string read GetChassi write SetChassi;
+      property Proprietaroio: string read GetProprietario write SetProprietario;
+      property VelocidadeMaxima: Double read GetVelMax write SetVelMax;
+      property VelocidadeAtual: Double read GetVelAtual write SetVelAtual;
+      property NumeroPortas: integer read GetNumeroPortas write SetNumeroPortas;
+      property TemTetoSolar: boolean read GetTemTetoSolar write SetTemTetoSolar;
+      property VolumeCombustivel: double read GetVolumeCombustivel write SetVolumeCombustivel;
+
+
+  end;
+
+implementation
+
+{ TCarro }
+
+procedure TCarro.Acelera(var Value: double);
+begin
+  FVelocidadeAtual := FVelocidadeAtual + 1;
+end;
+
+function TCarro.GetAno: String;
+begin
+
+end;
+
+function TCarro.GetChassi: string;
+begin
+
+end;
+
+function TCarro.GetCor: string;
+begin
+
+end;
+
+function TCarro.GetMarca: string;
+begin
+
+end;
+
+function TCarro.GetModelo: string;
+begin
+
+end;
+
+function TCarro.GetNumeroPortas: integer;
+begin
+
+end;
+
+function TCarro.GetProprietario: string;
+begin
+
+end;
+
+function TCarro.GetTemTetoSolar: boolean;
+begin
+
+end;
+
+function TCarro.GetVelAtual: Double;
+begin
+  result := FVelocidadeAtual;
+end;
+
+function TCarro.GetVelMax: Double;
+begin
+
+end;
+
+function TCarro.GetVolumeCombustivel: double;
+begin
+
+end;
+
+procedure TCarro.SetAno(const Value: String);
+begin
+
+end;
+
+procedure TCarro.SetChassi(const Value: string);
+begin
+
+end;
+
+procedure TCarro.SetCor(const Value: string);
+begin
+
+end;
+
+procedure TCarro.SetMarca(const Value: string);
+begin
+
+end;
+
+procedure TCarro.SetModelo(const Value: string);
+begin
+
+end;
+
+procedure TCarro.SetNumeroPortas(const Value: integer);
+begin
+
+end;
+
+procedure TCarro.SetProprietario(const Value: string);
+begin
+
+end;
+
+procedure TCarro.SetTemTetoSolar(const Value: boolean);
+begin
+
+end;
+
+procedure TCarro.SetVelAtual(const Value: Double);
+begin
+  FVelocidadeAtual := value;
+end;
+
+procedure TCarro.SetVelMax(const Value: Double);
+begin
+
+end;
+
+procedure TCarro.SetVolumeCombustivel(const Value: double);
+begin
+
+end;
+
+end.

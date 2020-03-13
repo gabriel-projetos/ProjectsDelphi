@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/11/09 20:59:02.000.886,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/07 13:47:16.000.582,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/07 13:48:25.000.191,C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit1.dfm=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/03/07 13:48:25.000.191,C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit1.pas=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/07 13:48:38.000.099,C:\Users\gabri\Desktop\Exercicios POO\ex2\Project1.dproj=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/03/07 13:49:16.000.673,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\default.txaPackage</Transaction>
+    <Transaction>2020/03/07 13:49:23.000.103,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\default.txvpck</Transaction>
+    <Transaction>2020/03/07 13:49:27.000.173,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\Unit1\default.txvpck</Transaction>
+    <Transaction>2020/03/07 13:49:27.000.267,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\Project1\default.txvpck</Transaction>
+    <Transaction>2020/03/07 13:49:28.000.127,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\Unit1\default.txaPackage</Transaction>
+    <Transaction>2020/03/07 13:53:15.000.456,=C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.pas</Transaction>
+    <Transaction>2020/03/07 13:53:47.000.627,C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.pas=C:\Users\gabri\Desktop\Exercicios POO\ex2\Model\ClienteModel.pas</Transaction>
+    <Transaction>2020/03/07 13:54:00.000.894,=C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.pas</Transaction>
+    <Transaction>2020/03/07 13:54:16.000.720,C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.pas=C:\Users\gabri\Desktop\Exercicios POO\ex2\Model\ProdutoModel.pas</Transaction>
+    <Transaction>2020/03/07 13:54:42.000.012,=C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.pas</Transaction>
+    <Transaction>2020/03/07 13:54:49.000.217,C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.pas=C:\Users\gabri\Desktop\Exercicios POO\ex2\Model\CaixaModel.pas</Transaction>
+    <Transaction>2020/03/07 13:55:09.000.145,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\ClienteModel\default.txaPackage</Transaction>
+    <Transaction>2020/03/07 13:55:09.000.005,C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit1.pas=</Transaction>
+    <Transaction>2020/03/07 13:55:09.000.161,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\CaixaModel\default.txaPackage</Transaction>
+    <Transaction>2020/03/07 13:55:09.000.192,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\ProdutoModel\default.txaPackage</Transaction>
+    <Transaction>2020/03/07 13:55:17.000.754,=C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.pas</Transaction>
+    <Transaction>2020/03/07 13:55:34.000.288,C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.dfm=C:\Users\gabri\Desktop\Exercicios POO\ex2\View\SaideraBarView.dfm</Transaction>
+    <Transaction>2020/03/07 13:55:34.000.288,C:\Users\gabri\Desktop\Exercicios POO\ex2\Unit2.pas=C:\Users\gabri\Desktop\Exercicios POO\ex2\View\SaideraBarView.pas</Transaction>
+    <Transaction>2020/03/07 14:07:24.000.469,=C:\Users\gabri\Desktop\Exercicios POO\ex2\ModelSupport_Project1\SaideraBarView\default.txaPackage</Transaction>
+  </Transactions>
+</BorlandProject>

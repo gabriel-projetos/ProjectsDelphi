@@ -1,0 +1,25 @@
+unit unCarro;
+
+interface
+type
+  TCarro = class
+    public
+      FModelo: string;
+      FCor: string;
+      FAno : string;
+      FMarca: string;
+      FChassi: STRING;
+      FProprietario : string;
+      FVelocidadeMax: double;
+      FVelocidadeAtual: double;
+      FNrPortas: integer;
+      FTemTetoSolar: boolean;
+      FNrMarchas: integer;
+      FTemCambioAutomatico: boolean;
+      FVolumeCombustivel: double;
+    private
+  end;
+
+implementation
+
+end.

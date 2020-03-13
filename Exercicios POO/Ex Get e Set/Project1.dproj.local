@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/11/09 20:59:02.000.886,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/09 23:31:30.238,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/03/09 23:32:04.945,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2020/03/09 23:44:29.822,C:\Users\gabri\Desktop\Exercicios POO\unPessoa.pas=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2020/03/09 23:45:02.609,C:\Users\gabri\Desktop\Exercicios POO\Ex Get e Set\unForm1.pas=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/03/09 23:45:02.609,C:\Users\gabri\Desktop\Exercicios POO\Ex Get e Set\unForm1.dfm=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2020/03/09 23:45:06.105,C:\Users\gabri\Desktop\Exercicios POO\Ex Get e Set\Project1.dproj=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,96 @@
+unit unEndereco;
+
+interface
+
+type
+  TEndecero = class
+  private
+    FRua: string;
+    FBairro: string;
+    FCidade: string;
+    FEstado: string;
+    FCEP: String;
+    FComplemente: string;
+
+  public
+    function GetBairro: String;
+    function GetCep: String;
+    function GetCidade: string;
+    function GetComplemento: string;
+    function GetEstado: string;
+    function GetRua: string;
+
+    procedure SetBairro(const Value: String);
+    procedure SetCep(const Value: String);
+    procedure SetCidade(const Value: string);
+    procedure SetComplemento(const Value: string);
+    procedure SetEstado(const Value: string);
+    procedure SetRua(const Value: string);
+
+    property Rua: string read GetRua write SetRua;
+    property Bairro: String read GetBairro write SetBairro;
+    property Cidade: string read GetCidade write SetCidade;
+    property Estado: string read GetEstado write SetEstado;
+    property Cep: String read GetCep write SetCep;
+    property Complemento: string read GetComplemento write SetComplemento;
+  end;
+
+implementation
+
+function TProprietario.GetBairro: String;
+begin
+  result := FBairro;
+end;
+
+function TProprietario.GetCep: String;
+begin
+  result := FCEP;
+end;
+
+function TProprietario.GetCidade: string;
+begin
+  result := FCidade;
+end;
+
+function TProprietario.GetComplemento: string;
+begin
+  result := FComplemente;
+end;
+
+function TProprietario.GetEstado: string;
+begin
+  RESULT := FEstado;
+end;
+
+
+function TProprietario.GetRua: string;
+begin
+  result := FRua;
+end;
+
+procedure TProprietario.SetBairro(const Value: String);
+begin
+  FBairro := Value;
+end;
+
+procedure TProprietario.SetCep(const Value: String);
+begin
+  FCEP := Value;
+end;
+
+procedure TProprietario.SetCidade(const Value: string);
+begin
+  FCidade := Value;
+end;
+
+procedure TProprietario.SetComplemento(const Value: string);
+begin
+  FComplemente := Value;
+end;
+
+procedure TProprietario.SetEstado(const Value: string);
+begin
+  FEstado := Value;
+end;
+
+end.

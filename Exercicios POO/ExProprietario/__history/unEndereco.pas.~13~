@@ -1,0 +1,107 @@
+unit unEndereco;
+
+interface
+
+uses
+  Vcl.Dialogs;
+
+type
+  TEndecero = class
+  //protected
+  public
+    FRua: string;
+    FBairro: string;
+    FCidade: string;
+    FEstado: string;
+    FCEP: String;
+    FComplemento: string;
+
+  //public
+    function GetBairro: String;
+    function GetCep: String;
+    function GetCidade: string;
+    function GetComplemento: string;
+    function GetEstado: string;
+    function GetRua: string;
+
+    procedure SetBairro(const Value: String);
+    procedure SetCep(const Value: String);
+    procedure SetCidade(const Value: string);
+    procedure SetComplemento(const Value: string);
+    procedure SetEstado(const Value: string);
+    procedure SetRua(const Value: string);
+
+    property Rua: string read GetRua write SetRua;
+    property Bairro: String read GetBairro write SetBairro;
+    property Cidade: string read GetCidade write SetCidade;
+    property Estado: string read GetEstado write SetEstado;
+    property Cep: String read GetCep write SetCep;
+    property Complemento: string read GetComplemento write SetComplemento;
+  end;
+
+implementation
+
+
+function TEndecero.GetBairro: String;
+begin
+  result := FBairro;
+end;
+
+function TEndecero.GetCep: String;
+begin
+  result := FCEP;
+end;
+
+function TEndecero.GetCidade: string;
+begin
+  result := FCidade;
+end;
+
+function TEndecero.GetComplemento: string;
+begin
+  result := FComplemento;
+end;
+
+function TEndecero.GetEstado: string;
+begin
+  RESULT := FEstado;
+end;
+
+function TEndecero.GetRua: string;
+begin
+  result := FRua;
+end;
+
+procedure TEndecero.SetBairro(const Value: String);
+begin
+  FBairro := Value;
+end;
+
+procedure TEndecero.SetCep(const Value: String);
+begin
+  FCEP := Value;
+end;
+
+procedure TEndecero.SetCidade(const Value: string);
+begin
+  FCidade := Value;
+end;
+
+procedure TEndecero.SetComplemento(const Value: string);
+begin
+  FComplemento := Value;
+end;
+
+procedure TEndecero.SetEstado(const Value: string);
+begin
+  FEstado := Value;
+end;
+
+
+procedure TEndecero.SetRua(const Value: string);
+begin
+  ShowMessage('porra');
+  FRua := Value;
+end;
+
+end.
