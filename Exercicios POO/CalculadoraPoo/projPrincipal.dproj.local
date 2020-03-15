@@ -3,9 +3,9 @@
 	<Transactions>
     <Transaction>2019/11/09 20:59:02.000.886,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2020/03/11 18:25:21.000.629,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2020/03/14 17:23:47.089,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2020/03/14 17:25:00.272,C:\ProjectsDelphi\Exercicios POO\CalculadoraPoo\unCalculadora.dfm=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
-    <Transaction>2020/03/14 17:25:00.272,C:\ProjectsDelphi\Exercicios POO\CalculadoraPoo\unCalculadora.pas=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2020/03/14 17:25:14.533,C:\ProjectsDelphi\Exercicios POO\CalculadoraPoo\projPrincipal.dproj=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/03/14 17:23:47.000.089,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/03/14 17:25:00.000.272,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\ProjectsDelphi\Exercicios POO\CalculadoraPoo\unCalculadora.pas</Transaction>
+    <Transaction>2020/03/14 17:25:00.000.272,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\ProjectsDelphi\Exercicios POO\CalculadoraPoo\unCalculadora.dfm</Transaction>
+    <Transaction>2020/03/14 17:25:14.000.533,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\ProjectsDelphi\Exercicios POO\CalculadoraPoo\projPrincipal.dproj</Transaction>
   </Transactions>
 </BorlandProject>
