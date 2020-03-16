@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/11/09 20:59:02.000.886,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/11 18:25:21.000.629,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/03/15 21:15:18.927,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/03/15 23:18:50.628,C:\ProjectsDelphi\Fluxo de Caixa\unMenuPrincipal.dfm=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2020/03/15 23:18:50.628,C:\ProjectsDelphi\Fluxo de Caixa\unMenuPrincipal.pas=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/03/15 23:19:16.944,C:\ProjectsDelphi\Fluxo de Caixa\dprFluxoDeCaixa.dproj=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/03/15 23:23:33.008,=C:\ProjectsDelphi\Fluxo de Caixa\Unit1.pas</Transaction>
+    <Transaction>2020/03/15 23:24:08.195,C:\ProjectsDelphi\Fluxo de Caixa\unParametros.dfm=C:\ProjectsDelphi\Fluxo de Caixa\Unit1.dfm</Transaction>
+    <Transaction>2020/03/15 23:24:08.195,C:\ProjectsDelphi\Fluxo de Caixa\unParametros.pas=C:\ProjectsDelphi\Fluxo de Caixa\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
