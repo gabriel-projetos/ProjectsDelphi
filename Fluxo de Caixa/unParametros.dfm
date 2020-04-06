@@ -1,9 +1,10 @@
 object frm_Parametros: Tfrm_Parametros
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Parametros'
-  ClientHeight = 201
-  ClientWidth = 447
+  ClientHeight = 175
+  ClientWidth = 469
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +12,54 @@ object frm_Parametros: Tfrm_Parametros
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 16
+    Top = 40
+    Width = 90
+    Height = 13
+    Caption = 'Nome da empresa:'
+  end
+  object edtNomeEmpresa: TEdit
+    Left = 16
+    Top = 59
+    Width = 313
+    Height = 21
+    CharCase = ecUpperCase
+    TabOrder = 0
+  end
+  object ckUsaCCustoReceita: TCheckBox
+    Left = 16
+    Top = 99
+    Width = 177
+    Height = 17
+    Caption = 'Usa centro de custo na receita ?'
+    TabOrder = 1
+  end
+  object ckUsaCCustoPag: TCheckBox
+    Left = 16
+    Top = 131
+    Width = 177
+    Height = 17
+    Caption = 'Usa centro de custo na despesa ?'
+    TabOrder = 2
+  end
+  object btnGravar: TButton
+    Left = 296
+    Top = 123
+    Width = 75
+    Height = 25
+    Caption = 'Gravar'
+    TabOrder = 3
+    OnClick = btnGravarClick
+  end
+  object qryParametros: TADOQuery
+    Connection = frm_DataModule.Conexao
+    Parameters = <>
+    Left = 400
+  end
 end

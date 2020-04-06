@@ -1,0 +1,37 @@
+object frm_DataModule: Tfrm_DataModule
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 201
+  Width = 349
+  object Conexao: TADOConnection
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Password=Gg34821450;Persist Security Info=Tr' +
+      'ue;User ID=sa;Initial Catalog=dbFluxoDeCaixa;Data Source=LAPTOP-' +
+      '0E5LQAT5'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 40
+    Top = 40
+  end
+  object qryAuxiliar: TADOQuery
+    Connection = Conexao
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 104
+    Top = 40
+  end
+  object cdsConexao: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 224
+    Top = 48
+    object cdsConexaoServer: TStringField
+      FieldName = 'Server'
+      Size = 100
+    end
+    object cdsConexaoBanco: TStringField
+      FieldName = 'Banco'
+      Size = 100
+    end
+  end
+end

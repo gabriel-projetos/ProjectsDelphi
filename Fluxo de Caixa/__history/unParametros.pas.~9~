@@ -1,0 +1,55 @@
+unit unParametros;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Data.Win.ADODB;
+
+type
+  Tfrm_Parametros = class(TForm)
+    qryParametros: TADOQuery;
+    Label1: TLabel;
+    edtNomeEmpresa: TEdit;
+    ckUsaCCustoReceita: TCheckBox;
+    ckUsaCCustoPag: TCheckBox;
+    btnGravar: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_Parametros: Tfrm_Parametros;
+
+implementation
+
+{$R *.dfm}
+
+uses unDataModule;
+
+procedure Tfrm_Parametros.FormCreate(Sender: TObject);
+begin
+  qryParametros.Close;
+  qryParametros.SQL.Text := 'select * from tbParametros';
+  qryParametros.Open;
+end;
+
+procedure Tfrm_Parametros.FormShow(Sender: TObject);
+begin
+  //Se tiver pelo menos um registro
+  if qryParametros.RecordCount > 0 then
+  begin
+    edtNomeEmpresa.Text := Trim(qryParametros.FieldByName('parNomeEmpresa').AsString);
+    ckUsaCCustoReceita.Checked := qryParametros.FieldByName('parUsaCCustoRec').AsString = 'S';
+    ckUsaCCustoPag.Checked := qryParametros.FieldByName('parCCustoPag').AsString = 'S';
+  end;
+
+  qryParametros.Close;
+
+end;
+
+end.

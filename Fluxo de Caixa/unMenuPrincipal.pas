@@ -11,8 +11,12 @@ type
   Tfrm_Menu = class(TForm)
     btn_frmParametros: TButton;
     btn_frmPessoas: TButton;
+    btn_frmTitulos: TButton;
     procedure btn_frmParametrosClick(Sender: TObject);
     procedure btn_frmPessoasClick(Sender: TObject);
+    procedure btn_frmCentroCustoClick(Sender: TObject);
+    procedure btn_frmTitulosClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,7 +30,17 @@ implementation
 
 {$R *.dfm}
 
-uses unPessoas, unParametros;
+uses unPessoas, unParametros, unCentroCustos, unTitulos, unDataModule;
+
+procedure Tfrm_Menu.btn_frmCentroCustoClick(Sender: TObject);
+begin
+  try
+    frm_centroCustos := Tfrm_centroCustos.create(self);
+    frm_centroCustos.ShowModal;
+  finally
+    FreeAndNil(frm_centroCustos);
+  end;
+end;
 
 procedure Tfrm_Menu.btn_frmParametrosClick(Sender: TObject);
 begin
@@ -47,6 +61,27 @@ begin
   finally
     FreeAndNil(frm_Pessoas);
   end;
+end;
+
+procedure Tfrm_Menu.btn_frmTitulosClick(Sender: TObject);
+begin
+  try
+    frm_Titulos := Tfrm_Titulos.create(self);
+    frm_Titulos.ShowModal;
+  finally
+    FreeAndNil(frm_Titulos);
+  end;
+end;
+
+procedure Tfrm_Menu.FormCreate(Sender: TObject);
+begin
+  FormStyle := fsStayOnTop;
+  if not frm_DataModule.conectado then
+  begin
+    ShowMessage('Falhou ao conectar!');
+    application.Terminate;
+  end;
+
 end;
 
 end.
