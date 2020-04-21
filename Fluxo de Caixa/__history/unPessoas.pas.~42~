@@ -1,0 +1,243 @@
+unit unPessoas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Mask, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Buttons, unPesquisaPessoas, unDataModule, Data.DB, Data.Win.ADODB, System.StrUtils;
+
+type
+  Tfrm_Pessoas = class(TForm)
+    Panel1: TPanel;
+    btnCancelar: TBitBtn;
+    btnPesquisar: TBitBtn;
+    btnGravar: TBitBtn;
+    btnExcluir: TBitBtn;
+    btnLimpar: TBitBtn;
+    rdgTipoPessoa: TRadioGroup;
+    edtCodigo: TEdit;
+    Label1: TLabel;
+    edtRazaoSocial: TEdit;
+    Label2: TLabel;
+    edtNomeFantasia: TEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    edtEmail: TEdit;
+    Label5: TLabel;
+    ckInativo: TCheckBox;
+    ckCliente: TCheckBox;
+    MkEdtTelefone: TMaskEdit;
+    ckFornecedor: TCheckBox;
+    qryPessoa: TADOQuery;
+    procedure FormShow(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
+    procedure btnGravarClick(Sender: TObject);
+  private
+    { Private declarations }
+    procedure limpaTela;
+    procedure carregaDados(cod: integer);
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_Pessoas: Tfrm_Pessoas;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm_Pessoas.btnCancelarClick(Sender: TObject);
+begin
+  if Trim(edtCodigo.Text) = '0' then begin
+    limpaTela;
+  end else begin
+    carregaDados(StrToInt(edtCodigo.Text));
+  end;
+
+end;
+
+procedure Tfrm_Pessoas.btnExcluirClick(Sender: TObject);
+begin
+  if Trim(edtCodigo.Text) = '0' then
+  begin
+      ShowMessage('Não é possivel excluir o registro 0 (Zero)');
+      abort;
+  end;
+
+  if MessageDlg('Deseja realmente excluir o registro ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    qryPessoa.Close;
+    qryPessoa.SQL.Text :=
+       ' delete from tbPessoas ' +
+            ' where id = :id   ';
+    qryPessoa.Parameters.ParamByName('id').Value := Trim(edtCodigo.Text);
+    qryPessoa.ExecSQL;
+
+    ShowMessage('Excluido com sucesso');
+    limpaTela;
+  end;
+
+end;
+
+procedure Tfrm_Pessoas.btnGravarClick(Sender: TObject);
+var
+  insercao: Boolean;
+begin
+  insercao := False;
+
+  if Trim(edtRazaoSocial.Text) = '' then begin
+    ShowMessage('Informe a razão social da pessoa.');
+    edtRazaoSocial.SetFocus;
+    Abort;
+  end;
+
+  if Trim(edtNomeFantasia.Text) = '' then begin
+    ShowMessage('Informe o nome Fantasia da pessoa.');
+    edtNomeFantasia.SetFocus;
+    Abort;
+  end;
+
+  if (Not ckCliente.Checked) and (not ckFornecedor.Checked) then begin
+    ShowMessage('Selecione ao menos 1 (uma( das opções: Cliente / Fornecedor.');
+    ckCliente.SetFocus;
+    Abort;
+  end;
+
+  if Trim(MkEdtTelefone.Text) = '(  )    -' then begin
+    MkEdtTelefone.Clear; // ou Text := ''
+  end;
+
+  insercao := Trim(edtCodigo.Text) = '0';
+
+  qryPessoa.Close;
+
+  if insercao then
+  begin
+    qryPessoa.SQL.Text :=
+        ' insert tbPessoas (' +
+        ' pesRazaoSocial, pesFantasia, pesTipo, pesCliente, ' +
+        ' pesFornecedor, pesTelefone, pesEmail, pesInativa ' +
+        ' ) values ( ' +
+        ' :pesRazaoSocial, :pesFantasia, :pesTipo, :pesCliente ' +
+        ' :pesFornecedor, :pesTelefone, :pesEmail, :pesInativa ) ';
+  end
+  else
+  begin
+    qryPessoa.SQL.Text :=
+        ' update tbCentroCustos ' +
+        ' set pesRazaoSocial = :pesRazaoSocial, ' +
+        ' pesFantasia = :pesFantasia, ' +
+        ' pesTipo = :pesTipo, ' +
+        ' pesCliente = :pesCliente, ' +
+        ' pesFornecedor = :pesFornecedor, ' +
+        ' pestelefone = :pesTelefone, ' +
+        ' pesEmail = :pesEmail, ' +
+        ' pesInativa = :pesInativa, ' +
+        ' where id = :id ';
+    qryPessoa.Parameters.ParamByName('id').Value := Trim(edtCodigo.Text);
+  end;
+
+  qryPessoa.Parameters.ParamByName('pesRazaoSocial').Value := Trim(edtRazaoSocial.Text);
+  qryPessoa.Parameters.ParamByName('pesFantasia').Value := Trim(edtNomeFantasia.Text);
+  qryPessoa.Parameters.ParamByName('pesTipo').Value :=
+  qryPessoa.Parameters.ParamByName('pesCliente').Value :=
+  qryPessoa.Parameters.ParamByName('pesFornecedor').Value :=
+  qryPessoa.Parameters.ParamByName('pesTelefone').Value := Trim(MkEdtTelefone.Text);
+  qryPessoa.Parameters.ParamByName('pesEmail').Value := Trim(edtEmail.Text);
+  qryPessoa.Parameters.ParamByName('pesInativa').Value :=
+
+  qryPessoa.ExecSQL;
+  ShowMessage('Salvo com sucesso');
+  LimpaTela;
+end;
+
+procedure Tfrm_Pessoas.btnLimparClick(Sender: TObject);
+begin
+  LimpaTela;
+end;
+
+procedure Tfrm_Pessoas.btnPesquisarClick(Sender: TObject);
+var
+  codigo: integer;
+begin
+  codigo := 0;
+  try
+    frmPesquisaPessoa := TfrmPesquisaPessoa.Create(self);
+    frmPesquisaPessoa.ShowModal;
+
+    if frmPesquisaPessoa.Tag = 1 then begin
+      codigo := frmPesquisaPessoa.qryPessoa.FieldByName('id').AsInteger;
+    end;
+  finally
+    FreeAndNil(frmPesquisaPessoa);
+  end;
+
+  if codigo > 0 then begin
+    carregaDados(codigo);
+  end;
+
+end;
+
+procedure Tfrm_Pessoas.carregaDados(cod: integer);
+begin
+  qryPessoa.Close;
+  qryPessoa.SQL.Text :=
+    ' select id, pesRazaoSocial, pesFantasia, pesTipo, ' +
+    ' pesCliente, pesFornecedor, pesTelefone, pesEmail, pesInativa ' +
+    ' From tbPessoas ' +
+    ' where id = :id ';
+  qryPessoa.Parameters.ParamByName('id').Value := cod;
+  qryPessoa.Open;
+
+  //se tiver pelo menos um registro
+  if qryPessoa.RecordCount > 0 then
+  begin
+    limpaTela;
+
+    edtCodigo.Text := Trim(qryPessoa.FieldByName('id').AsString);
+    edtRazaoSocial.Text := Trim(qryPessoa.FieldByName('pesRazaoSocial').AsString);
+    edtNomeFantasia.Text := Trim(qryPessoa.FieldByName('pesFantasia').AsString);
+
+    if Trim(qryPessoa.FieldByName('pesTipo').AsString) = 'F' then
+      rdgTipoPessoa.ItemIndex := 0
+    else
+      rdgTipoPessoa.ItemIndex := 1;
+    //rdgTipoPessoa.ItemIndex := IfThen(Trim(qryPessoa.FieldByName('rdgTipoPessoa').AsString) = 'F', 0, 1);
+
+    ckCliente.Checked := Trim(qryPessoa.FieldByName('pesCliente').AsString) = 'S';
+    ckFornecedor.Checked := Trim(qryPessoa.FieldByName('pesFornecedor').AsString) = 'S';
+    MkEdtTelefone.Text := Trim(qryPessoa.FieldByName('pesTelefone').AsString);
+    edtEmail.Text := LowerCase(Trim(qryPessoa.FieldByName('pesEmail').AsString));
+    ckInativo.Checked := Trim(qryPessoa.FieldByName('pesInativa').AsString) = 'S';
+  end;
+
+  qryPessoa.Close;
+
+end;
+
+procedure Tfrm_Pessoas.FormShow(Sender: TObject);
+begin
+  LimpaTela;
+end;
+
+procedure Tfrm_Pessoas.limpaTela;
+begin
+  edtCodigo.Text := '0';
+  edtRazaoSocial.Text := '';
+  edtNomeFantasia.Text := '';
+  rdgTipoPessoa.ItemIndex := 0;
+  ckCliente.Checked := false;
+  ckFornecedor.Checked := false;
+  MkEdtTelefone.Text := '';
+  edtEmail.Text := '';
+  ckInativo.Checked := false;
+
+  edtRazaoSocial.SetFocus;
+end;
+
+end.

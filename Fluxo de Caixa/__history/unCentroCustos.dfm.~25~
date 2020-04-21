@@ -3,7 +3,7 @@ object frm_centroCustos: Tfrm_centroCustos
   Top = 0
   Caption = 'Centro de Custos'
   ClientHeight = 262
-  ClientWidth = 374
+  ClientWidth = 435
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,7 +11,9 @@ object frm_centroCustos: Tfrm_centroCustos
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -78,7 +80,7 @@ object frm_centroCustos: Tfrm_centroCustos
     TabOrder = 5
   end
   object btnPesquisar: TButton
-    Left = 120
+    Left = 105
     Top = 24
     Width = 75
     Height = 25
@@ -86,10 +88,37 @@ object frm_centroCustos: Tfrm_centroCustos
     TabOrder = 6
     OnClick = btnPesquisarClick
   end
+  object btnCancelar: TButton
+    Left = 186
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Cancelar'
+    TabOrder = 7
+    OnClick = btnCancelarClick
+  end
+  object btnExcluir: TButton
+    Left = 267
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Excluir'
+    TabOrder = 8
+    OnClick = btnExcluirClick
+  end
+  object btnLimpar: TButton
+    Left = 348
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Limpar'
+    TabOrder = 9
+    OnClick = btnLimparClick
+  end
   object qryCentroCusto: TADOQuery
     Connection = frm_DataModule.Conexao
     Parameters = <>
-    Left = 320
-    Top = 24
+    Left = 240
+    Top = 96
   end
 end

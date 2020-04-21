@@ -1,0 +1,17 @@
+unit unFunções;
+
+interface
+
+uses
+  Vcl.Dialogs, Vcl.Controls;
+
+function Confirma(pergunta: String): boolean;
+
+implementation
+
+function Confirma(pergunta: String): boolean;
+begin
+  result := MessageDlg(pergunta, mtConfirmation, [mbYes, mbNo], 0) = mrYes
+end;
+
+end.

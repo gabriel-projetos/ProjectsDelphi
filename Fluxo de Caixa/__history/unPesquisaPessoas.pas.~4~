@@ -1,0 +1,28 @@
+unit unPesquisaPessoas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, unDataModule, Data.DB, Data.Win.ADODB,
+  Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmPesquisaPessoa = class(TForm)
+    DBGrid1: TDBGrid;
+    qryPessoa: TADOQuery;
+    dsPessoa: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+   //10minutos aula 23
+var
+  frmPesquisaPessoa: TfrmPesquisaPessoa;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Data.Win.ADODB, StrUtils, unDataModule,
-  unPesquisaCentroCustos;
+  unPesquisaCentroCustos, System.UITypes;
 
 type
   Tfrm_centroCustos = class(TForm)
@@ -19,14 +19,16 @@ type
     ckCcuInativo: TCheckBox;
     qryCentroCusto: TADOQuery;
     btnPesquisar: TButton;
-    btnInserir: TButton;
+    btnCancelar: TButton;
     btnExcluir: TButton;
+    btnLimpar: TButton;
     procedure FormCreate(Sender: TObject);
     procedure btnGravarClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
-    procedure btnInserirClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
   private
     { Private declarations }
     procedure carregaDados(cod: integer);
@@ -106,9 +108,19 @@ begin
   limpaTela;
 end;
 
-procedure Tfrm_centroCustos.btnInserirClick(Sender: TObject);
+procedure Tfrm_centroCustos.btnLimparClick(Sender: TObject);
 begin
   limpaTela;
+end;
+
+procedure Tfrm_centroCustos.btnCancelarClick(Sender: TObject);
+begin
+  if Trim(edtCcuId.Text) = '0' then begin
+    limpaTela;
+  end else begin
+    carregaDados(strToInt(edtCcuId.Text));
+  end;
+
 end;
 
 procedure Tfrm_centroCustos.btnPesquisarClick(Sender: TObject);

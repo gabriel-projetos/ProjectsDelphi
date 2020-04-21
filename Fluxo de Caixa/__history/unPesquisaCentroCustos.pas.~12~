@@ -4,12 +4,16 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, unDataModule;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, unDataModule,
+  Vcl.Grids, Vcl.DBGrids;
 
 type
   TfrmPesquisaCentroCusto = class(TForm)
     qryCentroCusto: TADOQuery;
+    DBGrid1: TDBGrid;
+    dsCentroCusto: TDataSource;
     procedure FormCreate(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -22,6 +26,18 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmPesquisaCentroCusto.DBGrid1DblClick(Sender: TObject);
+begin
+  //Verifica se tem um registro selecionado
+  if qryCentroCusto.RecNo > 0 then begin
+    tag := 1;
+    Close;
+  end
+  else
+    ShowMessage('Não foi selecionado um registro');
+
+end;
 
 procedure TfrmPesquisaCentroCusto.FormCreate(Sender: TObject);
 begin

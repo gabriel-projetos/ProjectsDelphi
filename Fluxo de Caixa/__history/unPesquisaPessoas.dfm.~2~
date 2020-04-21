@@ -1,7 +1,7 @@
-object frm_Titulos: Tfrm_Titulos
+object frmPesquisaPessoa: TfrmPesquisaPessoa
   Left = 0
   Top = 0
-  Caption = 'frm_Titulos'
+  Caption = 'frmPesquisaPessoa'
   ClientHeight = 201
   ClientWidth = 447
   Color = clBtnFace
