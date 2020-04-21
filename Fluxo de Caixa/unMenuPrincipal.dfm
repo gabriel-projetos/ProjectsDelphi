@@ -1,6 +1,7 @@
 object frm_Menu: Tfrm_Menu
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Fluxo de Caixa'
   ClientHeight = 296
   ClientWidth = 526

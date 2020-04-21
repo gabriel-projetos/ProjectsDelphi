@@ -1,6 +1,7 @@
 object frm_centroCustos: Tfrm_centroCustos
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Centro de Custos'
   ClientHeight = 262
   ClientWidth = 435

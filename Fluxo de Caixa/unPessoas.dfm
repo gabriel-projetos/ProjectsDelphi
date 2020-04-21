@@ -1,9 +1,10 @@
 object frm_Pessoas: Tfrm_Pessoas
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Pessoas'
-  ClientHeight = 201
-  ClientWidth = 447
+  ClientHeight = 334
+  ClientWidth = 446
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,6 +13,274 @@ object frm_Pessoas: Tfrm_Pessoas
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 62
+    Width = 37
+    Height = 13
+    Caption = 'C'#243'digo:'
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 116
+    Width = 64
+    Height = 13
+    Caption = 'Raz'#227'o Social:'
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 172
+    Width = 45
+    Height = 13
+    Caption = 'Fantasia:'
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 236
+    Width = 46
+    Height = 13
+    Caption = 'Telefone:'
+  end
+  object Label5: TLabel
+    Left = 170
+    Top = 236
+    Width = 28
+    Height = 13
+    Caption = 'Email:'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 446
+    Height = 41
+    Align = alTop
+    TabOrder = 0
+    object btnCancelar: TBitBtn
+      Left = 186
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Cancelar'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000130B0000130B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333FFFFF3333333333999993333333333F77777FFF333333999999999
+        33333337777FF377FF3333993370739993333377FF373F377FF3399993000339
+        993337777F777F3377F3393999707333993337F77737333337FF993399933333
+        399377F3777FF333377F993339903333399377F33737FF33377F993333707333
+        399377F333377FF3377F993333101933399377F333777FFF377F993333000993
+        399377FF3377737FF7733993330009993933373FF3777377F7F3399933000399
+        99333773FF777F777733339993707339933333773FF7FFF77333333999999999
+        3333333777333777333333333999993333333333377777333333}
+      NumGlyphs = 2
+      TabOrder = 0
+      OnClick = btnCancelarClick
+    end
+    object btnPesquisar: TBitBtn
+      Left = 105
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Pesquisar'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000130B0000130B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        33033333333333333F7F3333333333333000333333333333F777333333333333
+        000333333333333F777333333333333000333333333333F77733333333333300
+        033333333FFF3F777333333700073B703333333F7773F77733333307777700B3
+        33333377333777733333307F8F8F7033333337F333F337F3333377F8F9F8F773
+        3333373337F3373F3333078F898F870333337F33F7FFF37F333307F99999F703
+        33337F377777337F3333078F898F8703333373F337F33373333377F8F9F8F773
+        333337F3373337F33333307F8F8F70333333373FF333F7333333330777770333
+        333333773FF77333333333370007333333333333777333333333}
+      NumGlyphs = 2
+      TabOrder = 1
+      OnClick = btnPesquisarClick
+    end
+    object btnGravar: TBitBtn
+      Left = 24
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Gravar'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        333333FFFFFFFFFFFFF33000077777770033377777777777773F000007888888
+        00037F3337F3FF37F37F00000780088800037F3337F77F37F37F000007800888
+        00037F3337F77FF7F37F00000788888800037F3337777777337F000000000000
+        00037F3FFFFFFFFFFF7F00000000000000037F77777777777F7F000FFFFFFFFF
+        00037F7F333333337F7F000FFFFFFFFF00037F7F333333337F7F000FFFFFFFFF
+        00037F7F333333337F7F000FFFFFFFFF00037F7F333333337F7F000FFFFFFFFF
+        00037F7F333333337F7F000FFFFFFFFF07037F7F33333333777F000FFFFFFFFF
+        0003737FFFFFFFFF7F7330099999999900333777777777777733}
+      NumGlyphs = 2
+      TabOrder = 2
+      OnClick = btnGravarClick
+    end
+    object btnExcluir: TBitBtn
+      Left = 267
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Excluir'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333000000000
+        3333333777777777F3333330F777777033333337F3F3F3F7F3333330F0808070
+        33333337F7F7F7F7F3333330F080707033333337F7F7F7F7F3333330F0808070
+        33333337F7F7F7F7F3333330F080707033333337F7F7F7F7F3333330F0808070
+        333333F7F7F7F7F7F3F33030F080707030333737F7F7F7F7F7333300F0808070
+        03333377F7F7F7F773333330F080707033333337F7F7F7F7F333333070707070
+        33333337F7F7F7F7FF3333000000000003333377777777777F33330F88877777
+        0333337FFFFFFFFF7F3333000000000003333377777777777333333330777033
+        3333333337FFF7F3333333333000003333333333377777333333}
+      NumGlyphs = 2
+      TabOrder = 3
+      OnClick = btnExcluirClick
+    end
+    object btnLimpar: TBitBtn
+      Left = 348
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Limpar'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000130B0000130B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF0033333333B333
+        333B33FF33337F3333F73BB3777BB7777BB3377FFFF77FFFF77333B000000000
+        0B3333777777777777333330FFFFFFFF07333337F33333337F333330FFFFFFFF
+        07333337F33333337F333330FFFFFFFF07333337F33333337F333330FFFFFFFF
+        07333FF7F33333337FFFBBB0FFFFFFFF0BB37777F3333333777F3BB0FFFFFFFF
+        0BBB3777F3333FFF77773330FFFF000003333337F333777773333330FFFF0FF0
+        33333337F3337F37F3333330FFFF0F0B33333337F3337F77FF333330FFFF003B
+        B3333337FFFF77377FF333B000000333BB33337777777F3377FF3BB3333BB333
+        3BB33773333773333773B333333B3333333B7333333733333337}
+      NumGlyphs = 2
+      TabOrder = 4
+      OnClick = btnLimparClick
+    end
+  end
+  object rdgTipoPessoa: TRadioGroup
+    Left = 239
+    Top = 47
+    Width = 185
+    Height = 50
+    Caption = 'Tipo de Pesoa'
+    Columns = 2
+    Items.Strings = (
+      'F'#237'sica'
+      'Jur'#237'dica')
+    TabOrder = 1
+  end
+  object edtCodigo: TEdit
+    Left = 8
+    Top = 81
+    Width = 64
+    Height = 21
+    Enabled = False
+    TabOrder = 2
+  end
+  object edtRazaoSocial: TEdit
+    Left = 8
+    Top = 135
+    Width = 415
+    Height = 21
+    CharCase = ecUpperCase
+    TabOrder = 3
+  end
+  object edtNomeFantasia: TEdit
+    Left = 8
+    Top = 191
+    Width = 415
+    Height = 21
+    CharCase = ecUpperCase
+    TabOrder = 4
+  end
+  object edtEmail: TEdit
+    Left = 171
+    Top = 255
+    Width = 253
+    Height = 21
+    CharCase = ecLowerCase
+    TabOrder = 5
+  end
+  object ckInativo: TCheckBox
+    Left = 120
+    Top = 83
+    Width = 97
+    Height = 17
+    Caption = 'Inativo'
+    TabOrder = 6
+  end
+  object ckCliente: TCheckBox
+    Left = 8
+    Top = 299
+    Width = 97
+    Height = 17
+    Caption = 'Cliente'
+    TabOrder = 7
+  end
+  object MkEdtTelefone: TMaskEdit
+    Left = 8
+    Top = 255
+    Width = 119
+    Height = 21
+    EditMask = '!\(99\)0000-0000;1;_'
+    MaxLength = 13
+    TabOrder = 8
+    Text = '(  )    -    '
+  end
+  object ckFornecedor: TCheckBox
+    Left = 128
+    Top = 299
+    Width = 97
+    Height = 17
+    Caption = 'Fornecedor'
+    TabOrder = 9
+  end
+  object qryPessoa: TADOQuery
+    Connection = frm_DataModule.Conexao
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select id, pesFantasia, pesRazaoSocial,'
+      'case when pesTipo = '#39'J'#39' then'
+      '           '#39'Jur'#39
+      'else'
+      '           '#39'Fis'#39' end pesTipo,'
+      'case when pesCliente = '#39'S'#39' then'
+      '           '#39'Sim'#39
+      'else'
+      '           '#39'N'#227'o'#39' end pesCliente,'
+      'case when pesFornecedor = '#39'S'#39' then'
+      '           '#39'Sim'#39
+      'else'
+      '           '#39'N'#227'o'#39' end pesFornecedor,'
+      
+        'isnull(pesTelefone, '#39#39') pesTelefone, isnull(pesEmail, '#39#39') pesEma' +
+        'il,'
+      'case when pesInativa = '#39'S'#39' then'
+      '          '#39'Sim'#39
+      'else'
+      '         '#39'N'#227'o'#39' end pesInativa'
+      'from tbPessoas'
+      'order by PesFantasia'
+      ' ')
+    Left = 330
+    Top = 96
+  end
 end

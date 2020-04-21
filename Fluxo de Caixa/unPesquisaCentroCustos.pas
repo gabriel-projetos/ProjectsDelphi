@@ -42,10 +42,13 @@ end;
 procedure TfrmPesquisaCentroCusto.FormCreate(Sender: TObject);
 begin
   qryCentroCusto.Close;
-  qryCentroCusto.SQL.Text :=
-   ' select ' +
-   ' id, ccuDescricao, ccuReceita, ccuDespesa, ccuInativo ' +
-   ' from tbCentroCustos';
+  qryCentroCusto.SQL.Text := ' select ' +
+    ' id, ccuDescricao, ' +
+    ' case when ccuReceita = ''S'' then	''Sim'' else ''Não'' end ccuReceita, ' +
+    ' case when ccuDespesa = ''S'' then ''Sim'' else ''Não'' end ccuDespesa, ' +
+    ' case when ccuInativo = ''S'' then ''Sim'' else ''Não'' end ccuInativo  ' +
+    ' from tbCentroCustos ' +
+    ' order by ccuDescricao  ';
   qryCentroCusto.Open;
 end;
 

@@ -4,7 +4,7 @@ object frmPesquisaCentroCusto: TfrmPesquisaCentroCusto
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Pesquisa de Centro de Custos'
   ClientHeight = 237
-  ClientWidth = 526
+  ClientWidth = 537
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,14 +15,14 @@ object frmPesquisaCentroCusto: TfrmPesquisaCentroCusto
   Position = poScreenCenter
   OnCreate = FormCreate
   DesignSize = (
-    526
+    537
     237)
   PixelsPerInch = 96
   TextHeight = 13
   object DBGrid1: TDBGrid
     Left = 8
     Top = 8
-    Width = 510
+    Width = 521
     Height = 221
     Anchors = [akLeft, akTop, akRight, akBottom]
     DataSource = dsCentroCusto
@@ -76,22 +76,9 @@ object frmPesquisaCentroCusto: TfrmPesquisaCentroCusto
       end>
   end
   object qryCentroCusto: TADOQuery
-    Active = True
     Connection = frm_DataModule.Conexao
     CursorType = ctStatic
     Parameters = <>
-    SQL.Strings = (
-      'select '
-      'id, ccuDescricao, '
-      
-        'case when ccuReceita = '#39'S'#39' then'#9#39'Sim'#39' else '#39'N'#227'o'#39' end ccuReceita,' +
-        ' '
-      
-        'case when ccuDespesa = '#39'S'#39' then '#39'Sim'#39' else '#39'N'#227'o'#39' end ccuDespesa,' +
-        ' '
-      'case when ccuInativo = '#39'S'#39' then '#39'Sim'#39' else '#39'N'#227'o'#39' end ccuInativo'
-      'from tbCentroCustos'
-      'order by ccuDescricao')
     Left = 480
     Top = 16
   end
